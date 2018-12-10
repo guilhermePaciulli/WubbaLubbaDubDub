@@ -12,7 +12,7 @@ class APIClient {
     
     static let shared = APIClient()
     
-    private let baseEndpointUrl = "https://rickandmortyapi.com/api"
+    private let baseEndpointUrl = "https://rickandmortyapi.com/api/"
     
     private let session = URLSession(configuration: .default)
     
