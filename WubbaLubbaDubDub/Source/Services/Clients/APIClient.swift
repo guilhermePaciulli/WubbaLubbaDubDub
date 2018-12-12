@@ -21,7 +21,7 @@ class APIClient {
     public func send<T: APIRequest>(_ request: T, completion: @escaping ResultCallback<T.Response>) {
         
         let urlRequest = self.request(for: request)
-        self.session.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
+        self.session.dataTask(with: urlRequest) { (data, response, error) in
             if let data = data {
                 
                 if let expectedResponse = try? JSONDecoder().decode(T.Response.self, from: data) {
@@ -31,14 +31,13 @@ class APIClient {
                 } else {
                     completion(.failure(APIError(message: "There was an error communicating with the server")))
                 }
-                
+
+            } else if let error = error {
+                completion(.failure(APIError(message: error.localizedDescription)))
             } else {
                 completion(.failure(APIError(message: "There was an internal server error")))
             }
-            
-            
-            
-        }).resume()
+        }.resume()
     }
     
     private func request<T: APIRequest>(for request: T) -> URLRequest {
@@ -51,16 +50,18 @@ class APIClient {
         }
         
         guard let url = URL(string: stringURL) else {
-            fatalError("Bad request path: "+stringURL)
+            fatalError("Bad request path: " + stringURL)
         }
         
-        let urlRequest = NSMutableURLRequest(url: url)
+        var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.type.rawValue
-        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("no-cache", forHTTPHeaderField: "Cache-control")
+        urlRequest.setValue("no-cache", forHTTPHeaderField: "cache-control")
         
-        let jsonData = try? JSONEncoder().encode(request)
-        urlRequest.httpBody = jsonData
+        
+        if request.type != .get {
+            let jsonData = try? JSONEncoder().encode(request)
+            urlRequest.httpBody = jsonData
+        }
         
         
         return urlRequest as URLRequest

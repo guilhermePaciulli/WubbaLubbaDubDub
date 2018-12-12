@@ -8,14 +8,14 @@
 
 import Foundation
 
-class FetchRequestResponse<Results: Decodable>: Decodable {
+class FetchResponse<Results: Decodable>: Decodable {
     
-    let info: FetchRequestResponseInfo
+    let info: FetchResponseInfo
     let results: Results
     
 }
 
-class FetchRequestResponseInfo: Decodable {
+class FetchResponseInfo: Decodable {
     let count: Int
     let pages: Int
     let next: String

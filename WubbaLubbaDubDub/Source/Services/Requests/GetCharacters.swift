@@ -11,7 +11,7 @@ import Foundation
 class GetCharacters: APIRequest {
     
     var path: String {
-        return "characters"
+        return "character"
     }
     
     var type: RequestType {
@@ -20,6 +20,6 @@ class GetCharacters: APIRequest {
     
     var params: [String : String]?
     
-    typealias Response = FetchRequestResponse<[Character]>
+    typealias Response = FetchResponse<[Character]>
     
 }
