@@ -17,6 +17,6 @@ struct EpisodePreview: Codable {
     let url: URL
 }
 
-struct CharactersPreview: Codable {
+struct CharacterPreview: Codable {
     let url: URL
 }

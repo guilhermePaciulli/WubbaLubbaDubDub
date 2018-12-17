@@ -52,10 +52,7 @@ class Character: Codable {
         self.image =  try container.decode(String.self, forKey: .image)
         self.episode = (try container.decode([String].self, forKey: .episode)).map({ EpisodePreview(url: URL(string: $0)!) })
         self.url = URL(string: try container.decode(String.self, forKey: .url))!
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        self.created = dateFormatter.date(from: try container.decode(String.self, forKey: .created))!
+        self.created = DateFormatter.standarizedDateFormatter.date(from: try container.decode(String.self, forKey: .created))!
     }
     
 }

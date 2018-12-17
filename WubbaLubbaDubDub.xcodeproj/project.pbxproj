@@ -25,6 +25,7 @@
 		BDDD3FBC21C00D8E0056B919 /* GetCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FBB21C00D8E0056B919 /* GetCharactersTests.swift */; };
 		BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FBF21C82F4B0056B919 /* Previews.swift */; };
 		BDDD3FC221C830930056B919 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC121C830930056B919 /* Episode.swift */; };
+		BDDD3FC421C8325B0056B919 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		BDDD3FBB21C00D8E0056B919 /* GetCharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersTests.swift; sourceTree = "<group>"; };
 		BDDD3FBF21C82F4B0056B919 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
 		BDDD3FC121C830930056B919 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -192,8 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				BD2190A421BEE00000AC7EA2 /* WubbaLubbaDubDub.xcdatamodeld */,
-				BDDD3FB721BEF3FF0056B919 /* Character.swift */,
 				BDDD3FBF21C82F4B0056B919 /* Previews.swift */,
+				BDDD3FB721BEF3FF0056B919 /* Character.swift */,
 				BDDD3FC121C830930056B919 /* Episode.swift */,
 			);
 			path = Models;
@@ -222,6 +224,7 @@
 		BDDD3FA821BEE2D60056B919 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 			files = (
 				BDDD3FB821BEF3FF0056B919 /* Character.swift in Sources */,
 				BD2190A621BEE00000AC7EA2 /* WubbaLubbaDubDub.xcdatamodeld in Sources */,
+				BDDD3FC421C8325B0056B919 /* DateFormatter+Extension.swift in Sources */,
 				BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */,
 				BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */,
 				BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */,
