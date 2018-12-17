@@ -43,8 +43,14 @@ class APIClient {
         var stringURL = self.baseEndpointUrl + request.path
         
         if let params = request.params {
+            var first = true
             for (key, value) in params {
-                stringURL.append(contentsOf: "?"+key+"="+value)
+                if first {
+                    stringURL.append(contentsOf: "/?"+key+"="+value)
+                    first = false
+                } else {
+                    stringURL.append(contentsOf: "&"+key+"="+value)
+                }
             }
         }
         

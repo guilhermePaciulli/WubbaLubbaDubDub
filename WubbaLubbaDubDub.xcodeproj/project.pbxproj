@@ -31,6 +31,7 @@
 		BDDD3FCA21C83D1A0056B919 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC921C83D1A0056B919 /* Location.swift */; };
 		BDDD3FCC21C83E240056B919 /* GetLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCB21C83E240056B919 /* GetLocations.swift */; };
 		BDDD3FCE21C83E770056B919 /* GetLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCD21C83E770056B919 /* GetLocationsTests.swift */; };
+		BDDD3FD021C840240056B919 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCF21C840240056B919 /* Array+Extension.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		BDDD3FC921C83D1A0056B919 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BDDD3FCB21C83E240056B919 /* GetLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocations.swift; sourceTree = "<group>"; };
 		BDDD3FCD21C83E770056B919 /* GetLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsTests.swift; sourceTree = "<group>"; };
+		BDDD3FCF21C840240056B919 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */,
+				BDDD3FCF21C840240056B919 /* Array+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */,
 				BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */,
 				BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */,
+				BDDD3FD021C840240056B919 /* Array+Extension.swift in Sources */,
 				BDDD3FCA21C83D1A0056B919 /* Location.swift in Sources */,
 				BDDD3FC221C830930056B919 /* Episode.swift in Sources */,
 				BDDD3FB021BEE5620056B919 /* APIResult.swift in Sources */,
