@@ -28,6 +28,7 @@
 		BDDD3FC421C8325B0056B919 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */; };
 		BDDD3FC621C8344A0056B919 /* GetEpisodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC521C8344A0056B919 /* GetEpisodes.swift */; };
 		BDDD3FC821C834700056B919 /* GetEpisodesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC721C8346F0056B919 /* GetEpisodesTests.swift */; };
+		BDDD3FCA21C83D1A0056B919 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC921C83D1A0056B919 /* Location.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +81,7 @@
 		BDDD3FC321C8325B0056B919 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 		BDDD3FC521C8344A0056B919 /* GetEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodes.swift; sourceTree = "<group>"; };
 		BDDD3FC721C8346F0056B919 /* GetEpisodesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEpisodesTests.swift; sourceTree = "<group>"; };
+		BDDD3FC921C83D1A0056B919 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				BDDD3FBF21C82F4B0056B919 /* Previews.swift */,
 				BDDD3FB721BEF3FF0056B919 /* Character.swift */,
 				BDDD3FC121C830930056B919 /* Episode.swift */,
+				BDDD3FC921C83D1A0056B919 /* Location.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */,
 				BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */,
 				BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */,
+				BDDD3FCA21C83D1A0056B919 /* Location.swift in Sources */,
 				BDDD3FC221C830930056B919 /* Episode.swift in Sources */,
 				BDDD3FB021BEE5620056B919 /* APIResult.swift in Sources */,
 				BDDD3FB421BEF0E40056B919 /* FetchResponse.swift in Sources */,
