@@ -18,27 +18,46 @@ class Character: Codable {
     let origin: Location
     let location: Location
     let image: String
-    let episode: [String]
-    let url: String
-    let created: String
+    let episode: [URL]
+    let url: URL
+    let created: Date
     
-//    init(id: Int, name: String, status: Status, species: String, type: String, gender: Gender, origin: Location, location: Location, image: String, episode: [String], url: String, created: String) {
-//        self.id = id
-//        self.name = name
-//        self.status = status
-//        self.species = species
-//        self.type = type
-//        self.gender = gender
-//        self.origin = origin
-//        self.location = location
-//        self.image = image
-//        self.episode = episode
-//        self.url = url
-//        
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateFormat = "yyyy-MM-ddTHH:mm:ss.SSSZ"
-//        self.created = dateFormatter.date(from: created)!
-//    }
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case status
+        case species
+        case type
+        case gender
+        case origin
+        case location
+        case image
+        case episode
+        case url
+        case created
+    }
+    
+    required init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.status = try container.decode(Status.self, forKey: .status)
+        self.species = try container.decode(String.self, forKey: .species)
+        self.type =  try container.decode(String.self, forKey: .type)
+        self.gender =  try container.decode(Gender.self, forKey: .gender)
+        self.origin =  try container.decode(Location.self, forKey: .origin)
+        self.location =  try container.decode(Location.self, forKey: .location)
+        self.image =  try container.decode(String.self, forKey: .image)
+        self.episode = (try container.decode([String].self, forKey: .episode)).map({ URL(string: $0)! })
+        self.url = URL(string: try container.decode(String.self, forKey: .url))!
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        self.created = dateFormatter.date(from: try container.decode(String.self, forKey: .created))!
+    }
+    
 }
 
 enum Gender: String, Codable {
