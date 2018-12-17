@@ -35,4 +35,31 @@ class GetLocationsTests: XCTestCase {
         XCTAssertGreaterThan(locations.info.count, 0)
         XCTAssertGreaterThan(locations.results.count, 0)
     }
+    
+    func testFilteringLocations() {
+        
+        var locations: FetchResponse<[WubbaLubbaDubDub.Location]>!
+
+        let expectation = self.expectation(description: "Filter locations")
+        APIClient.shared.send(GetLocations(withName: "Earth"), completion: { result in
+            
+            switch result {
+            case .success(let locResult):
+                locations = locResult
+                break
+            case .failure(_):
+                break
+            }
+            
+            expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 60, handler: nil)
+        
+        XCTAssertNotNil(locations)
+        XCTAssertGreaterThan(locations.info.count, 0)
+        XCTAssertGreaterThan(locations.results.count, 0)
+        XCTAssertTrue(locations.results.first!.name.contains("Earth"))
+        
+    }
 }

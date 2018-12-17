@@ -21,4 +21,10 @@ class GetLocations: APIRequest {
     
     typealias Response = FetchResponse<[Location]>
     
+    init(withName name: String? = nil, withType type: String? = nil, andDimension dimension: String? = nil) {
+        self.params = ["name": name ?? "",
+                       "type": type ?? "",
+                       "dimension": type ?? ""]
+    }
+    
 }
