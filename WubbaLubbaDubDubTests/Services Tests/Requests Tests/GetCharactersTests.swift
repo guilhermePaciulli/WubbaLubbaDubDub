@@ -43,7 +43,7 @@ class GetCharactersTests: XCTestCase {
         
         var characters: FetchResponse<[WubbaLubbaDubDub.Character]>!
         
-        let expectation = self.expectation(description: "Fetch characters")
+        let expectation = self.expectation(description: "Filter characters")
         APIClient.shared.send(GetCharacters(withName: "Rick", status: .alive, andGender: .male), completion: { result in
             
             switch result {
