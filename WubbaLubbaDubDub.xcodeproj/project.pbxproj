@@ -22,8 +22,9 @@
 		BDDD3FB421BEF0E40056B919 /* FetchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FB321BEF0E40056B919 /* FetchResponse.swift */; };
 		BDDD3FB621BEF3060056B919 /* GetCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FB521BEF3060056B919 /* GetCharacters.swift */; };
 		BDDD3FB821BEF3FF0056B919 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FB721BEF3FF0056B919 /* Character.swift */; };
-		BDDD3FBA21BEF4540056B919 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FB921BEF4540056B919 /* Location.swift */; };
 		BDDD3FBC21C00D8E0056B919 /* GetCharactersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FBB21C00D8E0056B919 /* GetCharactersTests.swift */; };
+		BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FBF21C82F4B0056B919 /* Previews.swift */; };
+		BDDD3FC221C830930056B919 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FC121C830930056B919 /* Episode.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,8 +71,9 @@
 		BDDD3FB321BEF0E40056B919 /* FetchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchResponse.swift; sourceTree = "<group>"; };
 		BDDD3FB521BEF3060056B919 /* GetCharacters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharacters.swift; sourceTree = "<group>"; };
 		BDDD3FB721BEF3FF0056B919 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
-		BDDD3FB921BEF4540056B919 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		BDDD3FBB21C00D8E0056B919 /* GetCharactersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCharactersTests.swift; sourceTree = "<group>"; };
+		BDDD3FBF21C82F4B0056B919 /* Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Previews.swift; sourceTree = "<group>"; };
+		BDDD3FC121C830930056B919 /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -191,7 +193,8 @@
 			children = (
 				BD2190A421BEE00000AC7EA2 /* WubbaLubbaDubDub.xcdatamodeld */,
 				BDDD3FB721BEF3FF0056B919 /* Character.swift */,
-				BDDD3FB921BEF4540056B919 /* Location.swift */,
+				BDDD3FBF21C82F4B0056B919 /* Previews.swift */,
+				BDDD3FC121C830930056B919 /* Episode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -474,9 +477,10 @@
 			files = (
 				BDDD3FB821BEF3FF0056B919 /* Character.swift in Sources */,
 				BD2190A621BEE00000AC7EA2 /* WubbaLubbaDubDub.xcdatamodeld in Sources */,
-				BDDD3FBA21BEF4540056B919 /* Location.swift in Sources */,
+				BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */,
 				BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */,
 				BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */,
+				BDDD3FC221C830930056B919 /* Episode.swift in Sources */,
 				BDDD3FB021BEE5620056B919 /* APIResult.swift in Sources */,
 				BDDD3FB421BEF0E40056B919 /* FetchResponse.swift in Sources */,
 				BDDD3FAE21BEE5420056B919 /* APIRequest.swift in Sources */,
