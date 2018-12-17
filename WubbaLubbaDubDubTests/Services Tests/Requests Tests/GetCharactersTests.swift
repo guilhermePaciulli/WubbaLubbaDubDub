@@ -65,4 +65,30 @@ class GetCharactersTests: XCTestCase {
         XCTAssertTrue(characters.results.first!.name.contains("Rick"))
         
     }
+    
+    func testFetchCharactersByID() {
+        
+        var characters: [WubbaLubbaDubDub.Character] = []
+        
+        let expectation = self.expectation(description: "Fetch characters by ID")
+        APIClient.shared.send(SelectCharacter(withIDs: [1, 2]), completion: { result in
+            
+            switch result {
+            case .success(let charResult):
+                characters = charResult
+                break
+            case .failure(_):
+                break
+            }
+            
+            expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 60, handler: nil)
+        
+        XCTAssertNotNil(characters)
+        XCTAssertEqual(characters.count, 2)
+        XCTAssertEqual(characters.first!.name, "Rick Sanchez")
+        
+    }
 }

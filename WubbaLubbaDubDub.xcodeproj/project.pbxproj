@@ -32,6 +32,9 @@
 		BDDD3FCC21C83E240056B919 /* GetLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCB21C83E240056B919 /* GetLocations.swift */; };
 		BDDD3FCE21C83E770056B919 /* GetLocationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCD21C83E770056B919 /* GetLocationsTests.swift */; };
 		BDDD3FD021C840240056B919 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FCF21C840240056B919 /* Array+Extension.swift */; };
+		BDDD3FD221C867E40056B919 /* SelectCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD121C867E40056B919 /* SelectCharacter.swift */; };
+		BDDD3FD421C8680D0056B919 /* SelectEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD321C8680D0056B919 /* SelectEpisode.swift */; };
+		BDDD3FD621C868760056B919 /* SelectLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD521C868760056B919 /* SelectLocation.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +91,9 @@
 		BDDD3FCB21C83E240056B919 /* GetLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocations.swift; sourceTree = "<group>"; };
 		BDDD3FCD21C83E770056B919 /* GetLocationsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocationsTests.swift; sourceTree = "<group>"; };
 		BDDD3FCF21C840240056B919 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		BDDD3FD121C867E40056B919 /* SelectCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacter.swift; sourceTree = "<group>"; };
+		BDDD3FD321C8680D0056B919 /* SelectEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEpisode.swift; sourceTree = "<group>"; };
+		BDDD3FD521C868760056B919 /* SelectLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocation.swift; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -258,6 +264,9 @@
 				BDDD3FB521BEF3060056B919 /* GetCharacters.swift */,
 				BDDD3FC521C8344A0056B919 /* GetEpisodes.swift */,
 				BDDD3FCB21C83E240056B919 /* GetLocations.swift */,
+				BDDD3FD121C867E40056B919 /* SelectCharacter.swift */,
+				BDDD3FD321C8680D0056B919 /* SelectEpisode.swift */,
+				BDDD3FD521C868760056B919 /* SelectLocation.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -503,8 +512,10 @@
 				BDDD3FC021C82F4B0056B919 /* Previews.swift in Sources */,
 				BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */,
 				BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */,
+				BDDD3FD621C868760056B919 /* SelectLocation.swift in Sources */,
 				BDDD3FD021C840240056B919 /* Array+Extension.swift in Sources */,
 				BDDD3FCA21C83D1A0056B919 /* Location.swift in Sources */,
+				BDDD3FD221C867E40056B919 /* SelectCharacter.swift in Sources */,
 				BDDD3FC221C830930056B919 /* Episode.swift in Sources */,
 				BDDD3FB021BEE5620056B919 /* APIResult.swift in Sources */,
 				BDDD3FB421BEF0E40056B919 /* FetchResponse.swift in Sources */,
@@ -512,6 +523,7 @@
 				BDDD3FAE21BEE5420056B919 /* APIRequest.swift in Sources */,
 				BDDD3FB621BEF3060056B919 /* GetCharacters.swift in Sources */,
 				BD21909E21BEE00000AC7EA2 /* AppDelegate.swift in Sources */,
+				BDDD3FD421C8680D0056B919 /* SelectEpisode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

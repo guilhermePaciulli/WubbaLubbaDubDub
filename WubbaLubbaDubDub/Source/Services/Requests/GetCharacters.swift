@@ -32,8 +32,4 @@ class GetCharacters: APIRequest {
                        "gender": gender?.rawValue ?? ""]
     }
     
-    init(withIDs ids: [Int]) {
-        self.ids = ids
-    }
-    
 }

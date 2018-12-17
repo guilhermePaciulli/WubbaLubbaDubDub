@@ -1,5 +1,5 @@
 //
-//  GetEpisodes.swift
+//  SelectEpisode.swift
 //  WubbaLubbaDubDub
 //
 //  Created by Guilherme Paciulli on 17/12/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class GetEpisodes: APIRequest {
+class SelectEpisode: APIRequest {
     
     var path: String {
         return "episode"
@@ -22,11 +22,10 @@ class GetEpisodes: APIRequest {
     
     var ids: [Int]?
     
-    typealias Response = FetchResponse<[Episode]>
+    typealias Response = [Episode]
     
-    init(withName name: String? = nil, andEpisode episode: String? = nil) {
-        self.params = ["name": name ?? "",
-                       "episode": episode ?? ""]
+    init(withIDs ids: [Int]) {
+        self.ids = ids
     }
     
 }

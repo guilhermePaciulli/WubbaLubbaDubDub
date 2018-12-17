@@ -65,4 +65,30 @@ class GetEpisodesTests: XCTestCase {
         XCTAssertTrue(episodes.results.first!.name.contains("Pilot"))
         
     }
+    
+    func testFetchEpisodesByID() {
+        
+        var episodes: [WubbaLubbaDubDub.Episode] = []
+        
+        let expectation = self.expectation(description: "Fetch episodes by ID")
+        APIClient.shared.send(SelectEpisode(withIDs: [1, 2]), completion: { result in
+            
+            switch result {
+            case .success(let epResult):
+                episodes = epResult
+                break
+            case .failure(_):
+                break
+            }
+            
+            expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 60, handler: nil)
+        
+        XCTAssertNotNil(episodes)
+        XCTAssertEqual(episodes.count, 2)
+        XCTAssertEqual(episodes.first!.name, "Pilot")
+        
+    }
 }

@@ -62,4 +62,30 @@ class GetLocationsTests: XCTestCase {
         XCTAssertTrue(locations.results.first!.name.contains("Earth"))
         
     }
+    
+    func testFetchLocationsByID() {
+        
+        var location: [WubbaLubbaDubDub.Location] = []
+        
+        let expectation = self.expectation(description: "Fetch locations by ID")
+        APIClient.shared.send(SelectLocation(withIDs: [1, 2]), completion: { result in
+            
+            switch result {
+            case .success(let locResult):
+                location = locResult
+                break
+            case .failure(_):
+                break
+            }
+            
+            expectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 60, handler: nil)
+        
+        XCTAssertNotNil(location)
+        XCTAssertEqual(location.count, 2)
+        XCTAssertEqual(location.first!.name, "Earth (C-137)")
+        
+    }
 }
