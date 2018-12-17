@@ -40,18 +40,29 @@ class APIClient {
     }
     
     private func request<T: APIRequest>(for request: T) -> URLRequest {
-        var stringURL = self.baseEndpointUrl + request.path
+        var stringURL = self.baseEndpointUrl + request.path + "/"
         
         if let params = request.params {
             var first = true
             for (key, value) in params {
                 if first {
-                    stringURL.append(contentsOf: "/?"+key+"="+value)
+                    stringURL.append(contentsOf: "?"+key+"="+value)
                     first = false
                 } else {
                     stringURL.append(contentsOf: "&"+key+"="+value)
                 }
             }
+        } else if let ids = request.ids {
+            var first = true
+            ids.forEach({
+                if first {
+                    stringURL.append(contentsOf: String(describing: $0))
+                    first = false
+                } else {
+                    stringURL.append(contentsOf: "," + String(describing: $0))
+                }
+            })
+            
         }
         
         guard let url = URL(string: stringURL) else {
