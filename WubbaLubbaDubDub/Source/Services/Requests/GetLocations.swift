@@ -9,6 +9,7 @@
 import Foundation
 
 class GetLocations: APIRequest {
+    
     var path: String {
         return "location"
     }
@@ -18,6 +19,8 @@ class GetLocations: APIRequest {
     }
     
     var params: [String : String]?
+    
+    var ids: [Int]?
     
     typealias Response = FetchResponse<[Location]>
     

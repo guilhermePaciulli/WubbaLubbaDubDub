@@ -16,6 +16,8 @@ protocol APIRequest: Encodable {
     var type: RequestType { get }
     
     var params: [String: String]? { get }
+    
+    var ids: [Int]? { get }
 }
 
 enum RequestType: String {

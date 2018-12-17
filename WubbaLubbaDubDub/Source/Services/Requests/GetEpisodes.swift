@@ -20,11 +20,17 @@ class GetEpisodes: APIRequest {
     
     var params: [String : String]?
     
+    var ids: [Int]?
+    
     typealias Response = FetchResponse<[Episode]>
     
     init(withName name: String? = nil, andEpisode episode: String? = nil) {
         self.params = ["name": name ?? "",
                        "episode": episode ?? ""]
+    }
+    
+    init(withIDs ids: [Int]) {
+        self.ids = ids
     }
     
 }

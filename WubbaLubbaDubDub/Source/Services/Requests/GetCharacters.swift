@@ -20,6 +20,8 @@ class GetCharacters: APIRequest {
     
     var params: [String : String]?
     
+    var ids: [Int]?
+    
     typealias Response = FetchResponse<[Character]>
     
     init(withName name: String? = nil, status: Status? = nil, species: String? = nil, type: String? = nil, andGender gender: Gender? = nil) {
@@ -28,6 +30,10 @@ class GetCharacters: APIRequest {
                        "species": species ?? "",
                        "type": type ?? "",
                        "gender": gender?.rawValue ?? ""]
+    }
+    
+    init(withIDs ids: [Int]) {
+        self.ids = ids
     }
     
 }
