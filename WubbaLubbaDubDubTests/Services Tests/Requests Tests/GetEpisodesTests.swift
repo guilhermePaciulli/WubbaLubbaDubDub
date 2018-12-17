@@ -21,8 +21,8 @@ class GetEpisodesTests: XCTestCase {
         APIClient.shared.send(GetEpisodes(), completion: { result in
             
             switch result {
-            case .success(let charResult):
-                episodes = charResult
+            case .success(let epResult):
+                episodes = epResult
                 break
             case .failure(_):
                 break
