@@ -16,4 +16,10 @@ extension DateFormatter {
         return dateFormatter
     }
     
+    static var verboseDateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM dd, yyyy"
+        return dateFormatter
+    }
+    
 }

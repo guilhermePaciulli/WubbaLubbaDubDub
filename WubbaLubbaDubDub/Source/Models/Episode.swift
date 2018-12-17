@@ -12,30 +12,30 @@ class Episode: Codable {
     
     let id: Int
     let name: String
-    let type: String 
-    let dimension: String
-    let residents: [CharacterPreview]
+    let airDate: Date
+    let episode: String
+    let characters: [CharacterPreview]
     let url: URL
     let created: Date
     
-    private enum CodingKeys: String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id
         case name
-        case type
-        case dimension
-        case residents
+        case airDate = "air_date"
+        case episode
+        case characters
         case url
         case created
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        
+
         self.id = try container.decode(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.type = try container.decode(String.self, forKey: .type)
-        self.dimension = try container.decode(String.self, forKey: .dimension)
-        self.residents = (try container.decode([String].self, forKey: .residents)).map({ CharacterPreview(url: URL(string: $0)!) })
+        self.airDate = DateFormatter.verboseDateFormatter.date(from: try container.decode(String.self, forKey: .airDate))!
+        self.episode = try container.decode(String.self, forKey: .episode)
+        self.characters = (try container.decode([String].self, forKey: .characters)).map({ CharacterPreview(url: URL(string: $0)!) })
         self.url = URL(string: try container.decode(String.self, forKey: .url))!
         self.created = DateFormatter.standarizedDateFormatter.date(from: try container.decode(String.self, forKey: .created))!
     }
