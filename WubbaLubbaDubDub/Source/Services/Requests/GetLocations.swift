@@ -24,10 +24,11 @@ class GetLocations: APIRequest {
     
     typealias Response = FetchResponse<[Location]>
     
-    init(withName name: String? = nil, withType type: String? = nil, andDimension dimension: String? = nil) {
+    init(withName name: String? = nil, withType type: String? = nil, andDimension dimension: String? = nil, atPage page: Int = 1) {
         self.params = ["name": name ?? "",
                        "type": type ?? "",
-                       "dimension": type ?? ""]
+                       "dimension": type ?? "",
+                       "page": String(describing: page)]
     }
     
 }

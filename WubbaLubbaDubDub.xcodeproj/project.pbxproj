@@ -35,6 +35,7 @@
 		BDDD3FD221C867E40056B919 /* SelectCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD121C867E40056B919 /* SelectCharacter.swift */; };
 		BDDD3FD421C8680D0056B919 /* SelectEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD321C8680D0056B919 /* SelectEpisode.swift */; };
 		BDDD3FD621C868760056B919 /* SelectLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD521C868760056B919 /* SelectLocation.swift */; };
+		BDDD3FD821C86B140056B919 /* CharactersDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FD721C86B140056B919 /* CharactersDAO.swift */; };
 		C22CB2618D290F8CC49E19A0 /* Pods_WubbaLubbaDubDubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731C700B5EFB407539814A5D /* Pods_WubbaLubbaDubDubUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		BDDD3FD121C867E40056B919 /* SelectCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCharacter.swift; sourceTree = "<group>"; };
 		BDDD3FD321C8680D0056B919 /* SelectEpisode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectEpisode.swift; sourceTree = "<group>"; };
 		BDDD3FD521C868760056B919 /* SelectLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocation.swift; sourceTree = "<group>"; };
+		BDDD3FD721C86B140056B919 /* CharactersDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDAO.swift; sourceTree = "<group>"; };
 		CAF98758E27450BAD761A33F /* Pods-WubbaLubbaDubDubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubTests/Pods-WubbaLubbaDubDubTests.release.xcconfig"; sourceTree = "<group>"; };
 		CB4FE823FE417BE2C077DCFF /* Pods_WubbaLubbaDubDub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WubbaLubbaDubDub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE2A1BCF36A3B55D3C5ACC4C /* Pods-WubbaLubbaDubDubUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WubbaLubbaDubDubUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WubbaLubbaDubDubUITests/Pods-WubbaLubbaDubDubUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 		BDDD3FA721BEE2CD0056B919 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				BDDD3FD921C86B1B0056B919 /* Data Access Objects */,
 				BDDD3FB221BEE5A30056B919 /* Requests */,
 				BDDD3FB121BEE5960056B919 /* Clients */,
 				BDDD3FB321BEF0E40056B919 /* FetchResponse.swift */,
@@ -287,6 +290,14 @@
 				BDDD3FCD21C83E770056B919 /* GetLocationsTests.swift */,
 			);
 			path = "Requests Tests";
+			sourceTree = "<group>";
+		};
+		BDDD3FD921C86B1B0056B919 /* Data Access Objects */ = {
+			isa = PBXGroup;
+			children = (
+				BDDD3FD721C86B140056B919 /* CharactersDAO.swift */,
+			);
+			path = "Data Access Objects";
 			sourceTree = "<group>";
 		};
 		D9628FFE295A08F9D1072A32 /* Pods */ = {
@@ -524,6 +535,7 @@
 				BDDD3FB621BEF3060056B919 /* GetCharacters.swift in Sources */,
 				BD21909E21BEE00000AC7EA2 /* AppDelegate.swift in Sources */,
 				BDDD3FD421C8680D0056B919 /* SelectEpisode.swift in Sources */,
+				BDDD3FD821C86B140056B919 /* CharactersDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

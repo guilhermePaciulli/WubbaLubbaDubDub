@@ -23,13 +23,13 @@ class APIClient {
         self.session.dataTask(with: self.request(for: request)) { (data, response, error) in
             if let data = data {
                 
-                /*if*/ let expectedResponse = try! JSONDecoder().decode(T.Response.self, from: data) //{
+                if let expectedResponse = try? JSONDecoder().decode(T.Response.self, from: data) {
                     completion(.success(expectedResponse))
-//                } else if let serverError = try? JSONDecoder().decode(Error.self, from: data) {
-//                    completion(.failure(APIError(message: serverError.error.message)))
-//                } else {
-//                    completion(.failure(APIError(message: "There was an error communicating with the server")))
-//                }
+                } else if let serverError = try? JSONDecoder().decode(Error.self, from: data) {
+                    completion(.failure(APIError(message: serverError.error.message)))
+                } else {
+                    completion(.failure(APIError(message: "There was an error communicating with the server")))
+                }
 
             } else if let error = error {
                 completion(.failure(APIError(message: error.localizedDescription)))

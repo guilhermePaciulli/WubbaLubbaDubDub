@@ -24,9 +24,10 @@ class GetEpisodes: APIRequest {
     
     typealias Response = FetchResponse<[Episode]>
     
-    init(withName name: String? = nil, andEpisode episode: String? = nil) {
+    init(withName name: String? = nil, andEpisode episode: String? = nil, atPage page: Int = 1) {
         self.params = ["name": name ?? "",
-                       "episode": episode ?? ""]
+                       "episode": episode ?? "",
+                       "page": String(describing: page)]
     }
     
 }
