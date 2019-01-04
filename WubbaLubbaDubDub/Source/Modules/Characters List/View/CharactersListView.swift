@@ -23,3 +23,5 @@ class CharactersListView: UIViewController, CharactersListPresenterOutputProtoco
 	// MARK: - Private Methods
 
 }
+
+
