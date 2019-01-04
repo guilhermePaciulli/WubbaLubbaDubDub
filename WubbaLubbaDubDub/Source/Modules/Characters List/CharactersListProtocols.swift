@@ -22,7 +22,7 @@ protocol CharactersListInteractorInputProtocol {
 protocol CharactersListPresenterInputProtocol: class {
     func numberOfCharacters() -> Int
     func character(at index: Int) -> Character
-    func didSelectCharacter(_ character: Character)
+    func didSelectCharacter(_ character: IndexPath)
 }
 
 protocol CharactersListInteractorOutputProtocol: class {
