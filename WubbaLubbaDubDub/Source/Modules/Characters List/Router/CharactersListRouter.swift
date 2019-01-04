@@ -36,6 +36,13 @@ class CharactersListRouter: NSObject, CharactersListRouterProtocol {
 	}
 
     // MARK: - CharactersListRouterProtocol
+    func presentCharacter(character: Character) {
+        fatalError()
+    }
+    
+    func presentAsRoot(window: UIWindow) {
+        window.rootViewController = self.view
+    }
 
 	// MARK: - Private methods
 	private func viewControllerFromStoryboard() -> CharactersListView {

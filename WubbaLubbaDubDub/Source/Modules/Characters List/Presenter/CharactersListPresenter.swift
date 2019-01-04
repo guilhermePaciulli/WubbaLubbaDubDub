@@ -14,10 +14,45 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     weak var view: CharactersListPresenterOutputProtocol!
     var interactor: CharactersListInteractorInputProtocol!
     var router: CharactersListRouterProtocol!
+    
+    // MARK: - Properties
+    var currentCount = 0
+    var characters: [Character] = []
 
     // MARK: - CharactersListPresenterInputProtocol
+    func totalCharacters() -> Int {
+        return self.interactor.totalResults()
+    }
+    
+    func character(at index: Int) -> Character? {
+        return characters[index]
+    }
+    
+    func didSelectCharacter(_ character: IndexPath) {
+        self.router.presentCharacter(character: self.characters[character.row])
+    }
+    
+    func fetchCharacters(at indexPaths: [IndexPath]) {
+        self.interactor.fetchCharacters(withIndexes: indexPaths)
+    }
+    
+    func fetchFirstCharacters() {
+        self.interactor.fetchCharacters(withIndexes: nil)
+    }
+    
+    func getCurrentCount() -> Int {
+        return self.currentCount
+    }
+    
 
     // MARK: - CharactersListPresenterInteractorOutputProtocol
+    func handleSuccessFetchingCharacters(with results: [Character], andIndexes indexes: [IndexPath]?) {
+        self.view.didFetchCharacters(atIndexes: indexes)
+    }
+    
+    func handleFailureFetchingCharacters(with error: String) {
+        self.view.presentError(message: error)
+    }
 
 	// MARK: - Private Methods
 

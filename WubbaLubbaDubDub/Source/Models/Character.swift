@@ -17,7 +17,7 @@ class Character: Codable {
     let gender: Gender
     let origin: LocationPreview
     let location: LocationPreview
-    let image: String
+    let image: URL
     let episode: [EpisodePreview]
     let url: URL
     let created: Date
@@ -49,7 +49,7 @@ class Character: Codable {
         self.gender =  try container.decode(Gender.self, forKey: .gender)
         self.origin =  try container.decode(LocationPreview.self, forKey: .origin)
         self.location =  try container.decode(LocationPreview.self, forKey: .location)
-        self.image =  try container.decode(String.self, forKey: .image)
+        self.image =  URL(string: try container.decode(String.self, forKey: .image))!
         self.episode = (try container.decode([String].self, forKey: .episode)).map({ EpisodePreview(url: URL(string: $0)!) })
         self.url = URL(string: try container.decode(String.self, forKey: .url))!
         self.created = DateFormatter.standarizedDateFormatter.date(from: try container.decode(String.self, forKey: .created))!

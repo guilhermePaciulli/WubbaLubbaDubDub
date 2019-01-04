@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CharacterCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
+    var activityIndicator: UIActivityIndicatorView?
     
-    func set(with image: UIImage, and title: String) {
-        self.image.image = image
+    func configure(withImage imageUrl: URL, andTitle title: String) {
+        self.activityIndicator?.removeFromSuperview()
+        self.image.kf.indicatorType = .activity
+        self.image.kf.setImage(with: imageUrl)
         self.title.text = title
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
     }
+    
+    func configureToLoad() {
+        self.activityIndicator = UIActivityIndicatorView(frame: CGRect.init(origin: CGPoint.zero, size: self.frame.size))
+        self.addSubview(self.activityIndicator!)
+        self.activityIndicator?.startAnimating()
+    }
+    
 }

@@ -6,6 +6,7 @@ target 'WubbaLubbaDubDub' do
   use_frameworks!
 
   # Pods for WubbaLubbaDubDub
+  pod 'Kingfisher', '~> 5.0'
 
   target 'WubbaLubbaDubDubTests' do
     inherit! :search_paths
