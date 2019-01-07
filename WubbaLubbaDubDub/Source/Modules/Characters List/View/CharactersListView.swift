@@ -41,7 +41,7 @@ class CharactersListView: UIViewController, CharactersListPresenterOutputProtoco
     }
 
     // MARK: - CharactersListPresenterOutputProtocol
-    func didFetchCharacters(atIndexes indexes: [IndexPath]?) {
+    func didFetchCharacters() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
             if self.activityIndicator.isAnimating {
@@ -88,7 +88,7 @@ extension CharactersListView: UICollectionViewDataSourcePrefetching {
             return iPath.row > self.presenter.getCurrentCount()
         })
         if validate {
-            self.presenter.fetchCharacters(at: indexPaths)
+            self.presenter.fetchCharacters()
         }
     }
     

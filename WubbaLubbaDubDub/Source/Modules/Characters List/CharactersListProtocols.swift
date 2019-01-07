@@ -17,7 +17,7 @@ protocol CharactersListRouterProtocol: class {
 
 // MARK: - Interactor
 protocol CharactersListInteractorInputProtocol {
-    func fetchCharacters(withIndexes indexPaths: [IndexPath]?)
+    func fetchCharacters(resetFetch reset: Bool)
     func totalResults() -> Int
     func hasMorePages() -> Bool
 }
@@ -28,18 +28,18 @@ protocol CharactersListPresenterInputProtocol: class {
     func character(at index: Int) -> Character?
     func didSelectCharacter(_ character: IndexPath)
 
-    func fetchCharacters(at indexPaths: [IndexPath])
+    func fetchCharacters()
     func fetchFirstCharacters()
     func getCurrentCount() -> Int
 }
 
 protocol CharactersListInteractorOutputProtocol: class {
-    func handleSuccessFetchingCharacters(with results: [Character], andIndexes indexes: [IndexPath]?)
+    func handleSuccessFetchingCharacters(with results: [Character])
     func handleFailureFetchingCharacters(with error: String)
 }
 
 // MARK: - View
 protocol CharactersListPresenterOutputProtocol: class {
-    func didFetchCharacters(atIndexes indexes: [IndexPath]?)
+    func didFetchCharacters()
     func presentError(message: String)
 }

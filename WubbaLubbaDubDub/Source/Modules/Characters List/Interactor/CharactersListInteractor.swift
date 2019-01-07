@@ -19,13 +19,13 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInputProtocol 
     var isFetchCharactersInProgress = false
 
 	// MARK: - CharactersListInteractorInputProtocol
-    func fetchCharacters(withIndexes indexPaths: [IndexPath]?) {
+    func fetchCharacters(resetFetch reset: Bool) {
         if isFetchCharactersInProgress {
             return
         }
         self.isFetchCharactersInProgress = true
         
-        if indexPaths == nil {
+        if reset {
             self.pageCount = 0
         }
         
@@ -34,7 +34,7 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInputProtocol 
             switch results {
             case .success(let charResults):
                 self.results = charResults
-                self.output.handleSuccessFetchingCharacters(with: charResults.results, andIndexes: indexPaths)
+                self.output.handleSuccessFetchingCharacters(with: charResults.results)
             case .failure(let error):
                 self.output.handleFailureFetchingCharacters(with: error.message)
             }

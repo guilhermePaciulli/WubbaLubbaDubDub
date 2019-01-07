@@ -16,7 +16,6 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     var router: CharactersListRouterProtocol!
     
     // MARK: - Properties
-    var currentCount = 0
     var characters: [Character] = []
 
     // MARK: - CharactersListPresenterInputProtocol
@@ -35,12 +34,12 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
         self.router.presentCharacter(character: self.characters[character.row])
     }
     
-    func fetchCharacters(at indexPaths: [IndexPath]) {
-        self.interactor.fetchCharacters(withIndexes: indexPaths)
+    func fetchCharacters() {
+        self.interactor.fetchCharacters(resetFetch: false)
     }
     
     func fetchFirstCharacters() {
-        self.interactor.fetchCharacters(withIndexes: nil)
+        self.interactor.fetchCharacters(resetFetch: true)
     }
     
     func getCurrentCount() -> Int {
@@ -49,10 +48,9 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     
 
     // MARK: - CharactersListPresenterInteractorOutputProtocol
-    func handleSuccessFetchingCharacters(with results: [Character], andIndexes indexes: [IndexPath]?) {
+    func handleSuccessFetchingCharacters(with results: [Character]) {
         self.characters.append(contentsOf: results)
-        self.currentCount += results.count
-        self.view.didFetchCharacters(atIndexes: indexes)
+        self.view.didFetchCharacters()
     }
     
     func handleFailureFetchingCharacters(with error: String) {
