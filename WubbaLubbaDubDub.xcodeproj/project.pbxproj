@@ -23,6 +23,7 @@
 		BD3AAF8821DF76A700112CBC /* CharactersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3AAF8221DF76A700112CBC /* CharactersListView.swift */; };
 		BD3AAF9221DFB17100112CBC /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3AAF9121DFB17100112CBC /* CharacterCell.swift */; };
 		BD3AAF9821E3852200112CBC /* adult_swim.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BD3AAF9721E3852200112CBC /* adult_swim.ttf */; };
+		BD3AAF9D21E38DE700112CBC /* CharactersListInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD3AAF9C21E38DE700112CBC /* CharactersListInteractorTests.swift */; };
 		BDDD3FAA21BEE4B00056B919 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FA921BEE4B00056B919 /* APIClient.swift */; };
 		BDDD3FAC21BEE5140056B919 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FAB21BEE5140056B919 /* APIError.swift */; };
 		BDDD3FAE21BEE5420056B919 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDDD3FAD21BEE5420056B919 /* APIRequest.swift */; };
@@ -90,6 +91,7 @@
 		BD3AAF8221DF76A700112CBC /* CharactersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListView.swift; sourceTree = "<group>"; };
 		BD3AAF9121DFB17100112CBC /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
 		BD3AAF9721E3852200112CBC /* adult_swim.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = adult_swim.ttf; sourceTree = "<group>"; };
+		BD3AAF9C21E38DE700112CBC /* CharactersListInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersListInteractorTests.swift; sourceTree = "<group>"; };
 		BDDD3FA921BEE4B00056B919 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BDDD3FAB21BEE5140056B919 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		BDDD3FAD21BEE5420056B919 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			children = (
 				BD2190B721BEE00200AC7EA2 /* Info.plist */,
 				BDDD3FBD21C00D930056B919 /* Services Tests */,
+				BD3AAF9A21E38DA500112CBC /* Modules Tests */,
 			);
 			path = WubbaLubbaDubDubTests;
 			sourceTree = "<group>";
@@ -264,6 +267,22 @@
 				BD3AAF9721E3852200112CBC /* adult_swim.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BD3AAF9A21E38DA500112CBC /* Modules Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BD3AAF9B21E38DB500112CBC /* Characters List Tests */,
+			);
+			path = "Modules Tests";
+			sourceTree = "<group>";
+		};
+		BD3AAF9B21E38DB500112CBC /* Characters List Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BD3AAF9C21E38DE700112CBC /* CharactersListInteractorTests.swift */,
+			);
+			path = "Characters List Tests";
 			sourceTree = "<group>";
 		};
 		BDDD3FA321BEE2A30056B919 /* Resources */ = {
@@ -642,6 +661,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3AAF9D21E38DE700112CBC /* CharactersListInteractorTests.swift in Sources */,
 				BDDD3FCE21C83E770056B919 /* GetLocationsTests.swift in Sources */,
 				BDDD3FC821C834700056B919 /* GetEpisodesTests.swift in Sources */,
 				BDDD3FBC21C00D8E0056B919 /* GetCharactersTests.swift in Sources */,

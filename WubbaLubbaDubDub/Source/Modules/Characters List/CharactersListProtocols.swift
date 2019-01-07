@@ -19,7 +19,7 @@ protocol CharactersListRouterProtocol: class {
 protocol CharactersListInteractorInputProtocol {
     func fetchCharacters(resetFetch reset: Bool)
     func totalResults() -> Int
-    func hasMorePages() -> Bool
+//    func hasMorePages() -> Bool
 }
 
 // MARK: - Presenter

@@ -42,22 +42,10 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInputProtocol 
         })
     }
     
-    func hasMorePages() -> Bool {
-        if let results = self.results {
-            return results.info.pages != self.pageCount
-        }
-        return true
-    }
-    
     func totalResults() -> Int {
         return self.results?.info.count ?? 0
     }
 
     // MARK: - Private Methods
-    private func calculateIndexPathsToReload(from newCharacters: [Character]) -> [IndexPath] {
-        let startIndex = self.results!.results.count - newCharacters.count
-        let endIndex = startIndex + newCharacters.count
-        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
-    }
 
 }
