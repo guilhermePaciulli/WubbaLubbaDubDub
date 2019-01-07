@@ -46,20 +46,28 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="base-character" translatesAutoresizingMaskIntoConstraints="NO" id="yCG-0l-LcM">
                                                     <rect key="frame" x="10" y="10" width="151" height="153"/>
                                                 </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iCD-qE-JFx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="171" height="191"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="iCD-qE-JFx" firstAttribute="height" secondItem="gu5-R9-F8e" secondAttribute="height" id="9MF-9y-qVH"/>
                                             <constraint firstItem="yCG-0l-LcM" firstAttribute="top" secondItem="gu5-R9-F8e" secondAttribute="top" constant="10" id="BeU-TP-uJL"/>
                                             <constraint firstItem="yCG-0l-LcM" firstAttribute="height" secondItem="gu5-R9-F8e" secondAttribute="height" multiplier="0.8" id="Lde-vp-1TR"/>
+                                            <constraint firstItem="iCD-qE-JFx" firstAttribute="centerY" secondItem="gu5-R9-F8e" secondAttribute="centerY" id="Lgs-6a-dQj"/>
+                                            <constraint firstItem="iCD-qE-JFx" firstAttribute="centerX" secondItem="gu5-R9-F8e" secondAttribute="centerX" id="MbG-Dm-VsD"/>
                                             <constraint firstAttribute="trailing" secondItem="yCG-0l-LcM" secondAttribute="trailing" constant="10" id="abI-L6-UbC"/>
                                             <constraint firstItem="yCG-0l-LcM" firstAttribute="leading" secondItem="gu5-R9-F8e" secondAttribute="leading" constant="10" id="cwa-qa-99e"/>
                                             <constraint firstAttribute="trailing" secondItem="zQj-qd-0WD" secondAttribute="trailing" constant="10" id="dvn-QA-go3"/>
                                             <constraint firstAttribute="bottom" secondItem="zQj-qd-0WD" secondAttribute="bottom" constant="5" id="fZc-AM-83M"/>
+                                            <constraint firstItem="iCD-qE-JFx" firstAttribute="width" secondItem="gu5-R9-F8e" secondAttribute="width" id="i6Z-07-yTb"/>
                                             <constraint firstItem="zQj-qd-0WD" firstAttribute="top" secondItem="yCG-0l-LcM" secondAttribute="bottom" constant="5" id="qXe-G7-b6H"/>
                                             <constraint firstItem="zQj-qd-0WD" firstAttribute="leading" secondItem="gu5-R9-F8e" secondAttribute="leading" constant="10" id="sjB-gj-3IR"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="activityIndicator" destination="iCD-qE-JFx" id="XFP-HE-IkC"/>
                                             <outlet property="image" destination="yCG-0l-LcM" id="hPx-Ua-how"/>
                                             <outlet property="title" destination="zQj-qd-0WD" id="BXK-64-S8g"/>
                                         </connections>

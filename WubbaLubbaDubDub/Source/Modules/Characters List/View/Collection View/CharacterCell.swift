@@ -13,10 +13,13 @@ class CharacterCell: UICollectionViewCell {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var title: UILabel!
-    var activityIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView?
     
     func configure(withImage imageUrl: URL, andTitle title: String) {
-        self.activityIndicator?.removeFromSuperview()
+        self.activityIndicator?.isHidden = true
+        self.image.isHidden = false
+        self.title.isHidden = false
+        
         self.image.kf.indicatorType = .activity
         self.image.kf.setImage(with: imageUrl)
         self.title.text = title
@@ -25,8 +28,10 @@ class CharacterCell: UICollectionViewCell {
     }
     
     func configureToLoad() {
-        self.activityIndicator = UIActivityIndicatorView(frame: CGRect.init(origin: CGPoint.zero, size: self.frame.size))
-        self.addSubview(self.activityIndicator!)
+        self.image.isHidden = true
+        self.title.isHidden = true
+        self.activityIndicator?.isHidden = false
+        
         self.activityIndicator?.startAnimating()
     }
     

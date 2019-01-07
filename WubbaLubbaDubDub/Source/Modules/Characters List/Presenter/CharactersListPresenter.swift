@@ -25,6 +25,9 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     }
     
     func character(at index: Int) -> Character? {
+        if self.characters.count <= index {
+            return nil
+        }
         return characters[index]
     }
     
@@ -41,12 +44,14 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     }
     
     func getCurrentCount() -> Int {
-        return self.currentCount
+        return self.characters.count
     }
     
 
     // MARK: - CharactersListPresenterInteractorOutputProtocol
     func handleSuccessFetchingCharacters(with results: [Character], andIndexes indexes: [IndexPath]?) {
+        self.characters.append(contentsOf: results)
+        self.currentCount += results.count
         self.view.didFetchCharacters(atIndexes: indexes)
     }
     

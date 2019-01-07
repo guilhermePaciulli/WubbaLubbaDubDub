@@ -25,7 +25,7 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInputProtocol 
         }
         self.isFetchCharactersInProgress = true
         
-        if indexPaths != nil {
+        if indexPaths == nil {
             self.pageCount = 0
         }
         
@@ -54,5 +54,10 @@ class CharactersListInteractor: NSObject, CharactersListInteractorInputProtocol 
     }
 
     // MARK: - Private Methods
+    private func calculateIndexPathsToReload(from newCharacters: [Character]) -> [IndexPath] {
+        let startIndex = self.results!.results.count - newCharacters.count
+        let endIndex = startIndex + newCharacters.count
+        return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+    }
 
 }
