@@ -41,7 +41,8 @@ class CharactersListRouter: NSObject, CharactersListRouterProtocol {
     }
     
     func presentAsRoot(window: UIWindow) {
-        window.rootViewController = self.view
+        let navBar = UINavigationController(rootViewController: self.view)
+        window.rootViewController = navBar
     }
 
 	// MARK: - Private methods
