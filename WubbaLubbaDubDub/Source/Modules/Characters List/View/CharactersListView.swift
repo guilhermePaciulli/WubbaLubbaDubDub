@@ -42,22 +42,14 @@ class CharactersListView: UIViewController, CharactersListPresenterOutputProtoco
 
     // MARK: - CharactersListPresenterOutputProtocol
     func didFetchCharacters() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-            if self.activityIndicator.isAnimating {
-                self.stopLoadingEntireCollectionView()
-            }
+        self.collectionView.reloadData()
+        if self.activityIndicator.isAnimating {
+            self.stopLoadingEntireCollectionView()
         }
     }
     
     func presentError(message: String) {
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
-                alert.dismiss(animated: true)
-            }))
-            self.present(alert, animated: true, completion: nil)
-        }
+        self.presentAlert(withTitle: "Error", andDescription: message)
     }
 
 	// MARK: - Private Methods

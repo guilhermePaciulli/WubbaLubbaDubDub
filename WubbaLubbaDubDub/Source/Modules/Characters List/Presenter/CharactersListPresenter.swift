@@ -47,11 +47,15 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
     // MARK: - CharactersListPresenterInteractorOutputProtocol
     func handleSuccessFetchingCharacters(with results: [Character]) {
         self.characters.append(contentsOf: results)
-        self.view.didFetchCharacters()
+        DispatchQueue.main.async {
+            self.view.didFetchCharacters()
+        }
     }
     
     func handleFailureFetchingCharacters(with error: String) {
-        self.view.presentError(message: error)
+        DispatchQueue.main.async {
+            self.view.presentError(message: error)
+        }
     }
 
 	// MARK: - Private Methods

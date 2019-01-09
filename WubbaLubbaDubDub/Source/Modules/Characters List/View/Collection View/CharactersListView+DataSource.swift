@@ -12,10 +12,7 @@ import UIKit
 extension CharactersListView: UICollectionViewDataSourcePrefetching {
     
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let validate = indexPaths.contains(where: { iPath in
-            return iPath.row > self.presenter.getCurrentCount()
-        })
-        if validate {
+        if indexPaths.contains(where: { $0.row > self.presenter.getCurrentCount()}) {
             self.presenter.fetchCharacters()
         }
     }
