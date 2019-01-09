@@ -18,7 +18,7 @@ class CharactersListView: UIViewController, CharactersListPresenterOutputProtoco
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     // MARK: - Properties
-    private var reuseIdentifier = "CharacterCell"
+    internal var reuseIdentifier = "CharacterCell"
     
     // MARK: - Override methods
 	override func viewDidLoad() {
@@ -71,44 +71,4 @@ class CharactersListView: UIViewController, CharactersListPresenterOutputProtoco
         self.activityIndicator.stopAnimating()
     }
 
-}
-
-extension CharactersListView: UICollectionViewDelegate {
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.presenter.didSelectCharacter(indexPath)
-    }
-    
-}
-
-extension CharactersListView: UICollectionViewDataSourcePrefetching {
-    
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        let validate = indexPaths.contains(where: { iPath in
-            return iPath.row > self.presenter.getCurrentCount()
-        })
-        if validate {
-            self.presenter.fetchCharacters()
-        }
-    }
-    
-}
-
-extension CharactersListView: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presenter.totalCharacters()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let characterCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: self.reuseIdentifier, for: indexPath) as? CharacterCell else {
-            return UICollectionViewCell()
-        }
-        if let character = self.presenter.character(at: indexPath.row) {
-            characterCell.configure(withImage: character.image, andTitle: character.name)
-        } else {
-            characterCell.configureToLoad()
-        }
-        
-        return characterCell
-    }
 }

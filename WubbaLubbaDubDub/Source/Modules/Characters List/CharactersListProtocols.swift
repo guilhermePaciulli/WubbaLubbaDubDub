@@ -25,7 +25,7 @@ protocol CharactersListInteractorInputProtocol {
 // MARK: - Presenter
 protocol CharactersListPresenterInputProtocol: class {
     func totalCharacters() -> Int
-    func character(at index: Int) -> Character?
+    func character(at index: Int) -> CharacterListCellVO
     func didSelectCharacter(_ character: IndexPath)
 
     func fetchCharacters()

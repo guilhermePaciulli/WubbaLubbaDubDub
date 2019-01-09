@@ -23,11 +23,8 @@ class CharactersListPresenter: NSObject, CharactersListPresenterInputProtocol, C
         return self.interactor.totalResults()
     }
     
-    func character(at index: Int) -> Character? {
-        if self.characters.count <= index {
-            return nil
-        }
-        return characters[index]
+    func character(at index: Int) -> CharacterListCellVO {
+        return CharacterListCellVO(character: self.characters.count <= index ? nil : characters[index])
     }
     
     func didSelectCharacter(_ character: IndexPath) {
